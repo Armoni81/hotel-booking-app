@@ -1,0 +1,17 @@
+<div>
+    <ul>
+        <li *ngFor="let reservation of currentReservations "  >
+          <p>
+           CheckOut date: {{reservation.checkOutDate}} 
+          </p> 
+          <p>
+             Check In Date: {{reservation.checkInDate}} 
+
+          </p>
+          <p>
+
+          Guest Name:   {{reservation.guestName}}
+          </p>
+        </li>
+    </ul>
+</div>
