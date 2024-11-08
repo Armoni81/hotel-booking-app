@@ -1,17 +1,18 @@
 <div>
-    <ul>
-        <li *ngFor="let reservation of currentReservations "  >
-          <p>
-           CheckOut date: {{reservation.checkOutDate}} 
-          </p> 
-          <p>
-             Check In Date: {{reservation.checkInDate}} 
-
-          </p>
-          <p>
-
-          Guest Name:   {{reservation.guestName}}
-          </p>
+    <h2>Reservation List</h2>
+    <ul *ngIf="reservations.length; else noReservations">
+        <li *ngFor=" let reservation of reservations">
+          Guest:{{reservation.guestName}}<br>
+          Guest Email:  {{reservation.guestEmail}}<br>
+        Check-In Date {{reservation.checkInDate}}<br>
+         Check-Out Date   {{reservation.checkOutDate}}<br>
+         IDD{{reservation.id}}
+         <button (click)="onDelete(reservation.id)">Delete</button>
+         <button (click)="onUpdate(reservation)">Update</button>
         </li>
     </ul>
 </div>
+
+<ng-template #noReservations>
+    <p>No Reservations avaliable</p>
+</ng-template>
