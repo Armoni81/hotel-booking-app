@@ -42,5 +42,6 @@ export class ReservationFormComponent implements OnInit{
     this.reservationService.deleteReservation(id)
     console.log(id)
   }
+  
 
 }
